@@ -1,9 +1,11 @@
 import socket
+import install_pyqt
+
+
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel
 from PyQt5.QtCore import Qt
 
 def show_banner():
-    
     # Gets Server Name
     server_name = socket.gethostname()
 
@@ -29,4 +31,7 @@ def show_banner():
     # Run the event loop
     app.exec_()
 
-show_banner()
+try:
+    show_banner()
+except Exception as e:
+    print(f"An error occurred: {e}")
